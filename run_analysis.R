@@ -76,7 +76,7 @@ runAnalysis <- function () {
 	library(dplyr)
 	observationsMean <- observations %>% group_by(subject, activity) %>% summarise_each(funs(mean))
 	
-	write.table(observationsMean, file = "data/averages.txt", append = FALSE, row.names = FALSE)
+	write.table(result$means, file = "data/averages.txt", append = FALSE, row.names = FALSE)
 	list(data = observations, means = observationsMean)
 }
 
